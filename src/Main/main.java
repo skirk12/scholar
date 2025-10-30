@@ -17,7 +17,7 @@ public class main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         config conf = new config();
-        conf.connectDB();
+        config.connectDB();
         int choice;
         char cont;
 
@@ -92,19 +92,22 @@ public class main {
                                                 
                                                 System.out.print("Enter new Contact Number: ");
                                                 int newContact = sc.nextInt();
+                                                sc.nextLine();
 
                                                 System.out.print("Enter new email: ");
                                                 String newEmail = sc.nextLine();
 
-                                                System.out.print("Enter new type (1. Admin / 2. Student : ");
+                                                System.out.print("Enter new type (1. Admin / 2. Student) : ");
                                                 int newType = sc.nextInt();
+                                                sc.nextLine();
                                                     while (newType > 2 || newType < 1) {
                                                         System.out.print("Invalid, choose between 1 & 2 only: ");
                                                     }
                                                     String tpe = "";
                                                     if (newType == 1) {
+                                                        tpe = "Admin";
                                                     } else {
-                                                        tpe = "Customer";
+                                                        tpe = "Student";
                                                     }           
                                                 System.out.print("Enter new password: ");
                                                 String newPass = sc.nextLine();
